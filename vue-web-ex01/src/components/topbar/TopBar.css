@@ -1,0 +1,35 @@
+.topbar-bg{
+    display: flex;
+}
+.option{
+    width: 90%;
+    height: 9vh;
+    background-color: #E74C3C;
+    border-bottom-right-radius: 60px;
+    display: flex;
+    box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 8px 16px rgba(0, 0, 0, 0.1),
+    0 16px 32px rgba(0, 0, 0, 0.1),
+    0 32px 64px rgba(0, 0, 0, 0.1);
+}
+.topbar-title{
+    align-content: center;
+    margin-left: 30px;
+    font-family: "DM Sans",sans-serif;
+}
+.profile {
+    height: 10vh;
+    margin-left: 50px;
+    border-bottom-left-radius : 50px;
+    border-bottom-right-radius : 50px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.1),
+    0 8px 16px rgba(0, 0, 0, 0.1),
+    0 16px 32px rgba(0, 0, 0, 0.1),
+    0 32px 64px rgba(0, 0, 0, 0.1);
+}
