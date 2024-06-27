@@ -68,7 +68,7 @@ const handleSubmit = () => {
 .title-login {
   font-weight: 400;
   color: grey;
-  margin-bottom: 60px;
+  margin-bottom: 5px;
 }
 .lbl {
   font-size: large;

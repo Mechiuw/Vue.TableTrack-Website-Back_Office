@@ -30,7 +30,12 @@
     border-top-right-radius: 200px;
     display: flex;
     flex-direction: column;
-  
+    box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.2),
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    0 8px 16px rgba(0, 0, 0, 0.2),
+    0 16px 32px rgba(0, 0, 0, 0.2),
+    0 32px 64px rgba(0, 0, 0, 0.2);
 }
 .container-text-big{
   margin-bottom:10px ;
