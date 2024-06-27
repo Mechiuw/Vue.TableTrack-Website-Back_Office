@@ -1,5 +1,5 @@
 <script setup>
-  import LoginBanner from './LoginBanner.vue'
+import LoginBanner from './LoginBanner.vue'
 import LoginInput from './LoginInput.vue';
 </script>
 
