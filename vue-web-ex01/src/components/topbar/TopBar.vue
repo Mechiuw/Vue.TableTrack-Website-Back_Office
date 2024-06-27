@@ -16,12 +16,12 @@ export default {
 <template>
     <div class="topbar-bg">
         <div class="option">
-            <img :src="logo" width="100px">
+            <img :src="logo" class="ms-3">
             <h1 style="color: white;" class="topbar-title">{{title}}</h1>
             <h6 style="color: white;" class="topbar-title">{{maker}}</h6>
         </div>
         <div class="profile">
-            <img :src="profileImage" width="70px">
+            <img :src="profileImage" width="40px">
         </div>
     </div>
 </template>

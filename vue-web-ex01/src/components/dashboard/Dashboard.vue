@@ -1,11 +1,13 @@
 <script>
 import NavBar from '../navbar/NavBar.vue';
 import TopBar from '../topbar/TopBar.vue';
+import Content from './Content.vue';
 export default {
     name : 'Dashboard',
     components : {
         NavBar : NavBar,
-        TopBar : TopBar
+        TopBar : TopBar,
+        Content : Content
     }
 }
 </script>
@@ -20,11 +22,14 @@ export default {
                 <NavBar/>
             </div>
             <div class="main-content">
-                
+                <Content/>
             </div>
         </div>
     </div>
 </template>
 
 <style>
+.container-content{
+    margin-top: 40px;
+}
 </style>

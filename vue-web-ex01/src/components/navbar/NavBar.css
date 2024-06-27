@@ -1,0 +1,19 @@
+.navbar-viewport{
+    background-color: #E74C3C;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 70px;
+    padding-left: 15px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    color: white;
+    box-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.2),
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    0 8px 16px rgba(0, 0, 0, 0.2),
+    0 16px 32px rgba(0, 0, 0, 0.1),
+    0 32px 64px rgba(0, 0, 0, 0.1);
+}
