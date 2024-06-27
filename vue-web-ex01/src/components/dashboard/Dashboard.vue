@@ -31,5 +31,10 @@ export default {
 <style>
 .container-content{
     margin-top: 40px;
+    display: flex
+}
+
+.main-content{
+    margin-left: 20%;
 }
 </style>
