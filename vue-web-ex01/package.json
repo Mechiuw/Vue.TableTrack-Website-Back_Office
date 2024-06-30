@@ -13,7 +13,8 @@
     "@tabler/icons-vue": "^3.7.0",
     "bootstrap": "^5.3.3",
     "gsap": "^3.12.5",
-    "vue": "^3.4.29"
+    "vue": "^3.4.29",
+    "vuex": "^4.1.0"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.5",
