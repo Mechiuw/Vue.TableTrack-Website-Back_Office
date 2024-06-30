@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <form @submit.prevent="addOrder">
+    <form @submit.prevent="addOrder" class="form-control">
         <div>
             <label for="order-date">Date</label>
             <input v-model="orderDate" type="date" id="order-date">
@@ -53,9 +53,9 @@ export default {
         const addOrder = () =>{
             if(selectedCustomer && selectedProduct && orderQuantity.value > 0 && orderDate){
                 const newOrder = {
-                  date : date.value ,
+                  date : orderDate.value ,
                   customer : selectedCustomer.value,
-                  quantity : quantity.value,
+                  quantity : orderQuantity.value,
                   product : selectedProduct.value
                 }
                 this.$store.commit('ADD_TASK',newOrder)
