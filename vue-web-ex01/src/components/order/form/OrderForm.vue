@@ -37,11 +37,16 @@
 <script>
 import { ref } from 'vue';
 import Autocomplete from '@/components/Autocomplete.vue';
+import { useStore } from 'vuex';
+
+
+
 export default {
     components:{
         Autocomplete,
     },
     setup(){
+        const store = useStore();
         const selectedCustomer = ref('');
         const selectedProduct = ref('');
         const customerApiUrl = 'API_URL/customers';
@@ -58,7 +63,9 @@ export default {
                   quantity : orderQuantity.value,
                   product : selectedProduct.value
                 }
-                this.$store.commit('ADD_TASK',newOrder)
+
+                store.commit('ADD_ORDER',newOrder);
+                
                 console.log(newOrder);
                 orderDate.value = ''
                 selectedCustomer.value = ''
