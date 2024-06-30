@@ -17,19 +17,16 @@ export const mutations = {
         if(index !== -1){
             state.orders[index] = order;
         }
-    },
-    GET_ALL_ORDER(state,order){
-        if(isEmpty(state.orders) != true){
-            return [...state.orders]
-        }
-    },
-    GET_BY_ID(state,order){
-        const index = state.orders.indexOf(order)
-        if(index !== -1){
-            return [...state.orders]
-        }
     }
+}
 
+export const getters = {
+    GET_ALL_ORDERS(state) {
+        return state.orders;
+    },
+    GET_ORDER_BY_ID: (state) => (id) => {
+        return state.orders.find(order => order.id === id);
+    }
 }
 
 function isEmpty(arx){
