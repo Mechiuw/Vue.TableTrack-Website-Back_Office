@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router'
+import VueRouter, { createRouter, createWebHashHistory } from 'vue-router'
 
 import Login from '../login/Login.vue'
 import Dashboard from '../dashboard/Dashboard.vue'
@@ -14,13 +14,13 @@ const routes = [
     },
     {
         path : '/auth/login',
-        name : 'Login',
+        name : 'Login', 
         component : Login
     }
 ]
 
-const router = new VueRouter({
-    mode: 'history',
+const router = createRouter({
+    history : createWebHashHistory(process.env.BASE_URL),
     routes
 })
 
