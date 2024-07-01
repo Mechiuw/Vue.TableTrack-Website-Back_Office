@@ -15,7 +15,7 @@
       </div>
       <div class="mb-5 d-flex" id="remember-line">
         <div class="d-flex">
-          <input class="me-3" type="checkbox"/>
+          <input v-model="rememberMe" class="me-3" type="checkbox"/>
           <label style="font-weight: 400;">Remember me!</label>
         </div>
         <div>
@@ -29,14 +29,33 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+import axios from 'axios';
 
 const username = ref('');
 const password = ref('');
+const rememberMe = ref(false);
+const router = useRouter();
 
-const handleSubmit = () => {
-  console.log('Username:', username.value);
-  console.log('Password:', password.value);
+const handleSubmit = async () => {
+  try {
+    const response = await axios.post('http://localhost:8080/api/auth/login', {
+      username : username.value,
+      password : password.value
+    })
+
+    const token = response.data.token;
+    
+    if(rememberMe.value){
+
+    }
+  } catch (error){
+    console.log(error);
+  }
 }
+
+
+
 </script>
 
 <style scoped>

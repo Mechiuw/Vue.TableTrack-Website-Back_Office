@@ -6,7 +6,7 @@ import Login from './components/login/Login.vue';
 <template>
   <div>
     <Login/>
-     <!-- <Dashboard/> -->
+     <!-- <Dashboard/> -->  
   </div>
 </template>
 
