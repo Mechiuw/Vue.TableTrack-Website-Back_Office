@@ -47,10 +47,15 @@ const handleSubmit = async () => {
     const token = response.data.token;
     
     if(rememberMe.value){
-
+      localStorage.setItem('token',token);
+    } else {
+      sessionStorage.setItem('token',token);
     }
+
+    router.push("/dashboard")
   } catch (error){
     console.log(error);
+    alert('login failed, please check your credential')
   }
 }
 
