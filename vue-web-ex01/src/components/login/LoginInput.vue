@@ -7,7 +7,7 @@
     <form @submit.prevent="handleSubmit">
       <div class="mb-4">
         <label class="mb-2 lbl">Username</label>
-        <input class="form-control inp" v-model="username" type="email" />
+        <input class="form-control inp" v-model="username" type="text" />
       </div>
       <div class="mb-4"> 
         <label class="mb-2 lbl">Password</label>
@@ -44,6 +44,7 @@ const handleSubmit = async () => {
       password : password.value
     })
 
+    console.log(response.data);
     const token = response.data.token;
     
     if(rememberMe.value){
@@ -58,7 +59,7 @@ const handleSubmit = async () => {
     alert('login failed, please check your credential')
   }
 }
-
+  
 
 
 </script>
