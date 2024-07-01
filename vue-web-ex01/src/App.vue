@@ -1,14 +1,11 @@
-<script setup>
-// import Dashboard from './components/dashboard/Dashboard.vue';
-import Login from './components/login/Login.vue';
-</script>
-
 <template>
-  <div>
-    <Login/>
-     <!-- <Dashboard/> -->  
+  <div id="app">
+    <router-view></router-view>
   </div>
 </template>
+
+<script setup>
+</script>
 
 <style scoped>
 </style>

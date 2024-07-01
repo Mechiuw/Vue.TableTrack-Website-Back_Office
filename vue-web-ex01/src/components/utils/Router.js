@@ -1,24 +1,41 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 import Login from '../login/Login.vue';
 import Dashboard from '../dashboard/Dashboard.vue';
 
-const BASE_URL = '/auth/login';
 const routes = [
+  {
+    path: '/',
+    redirect: '/login', 
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login,
+  },
   {
     path: '/dashboard',
     name: 'Dashboard',
-    component: Dashboard
+    component: Dashboard,
+    meta: { requiresAuth: true },
   },
-  {
-    path: '/auth/login',
-    name: 'Login',
-    component: Login
-  }
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(BASE_URL),
-  routes
+  history: createWebHistory(),
+  routes,
 });
+
+router.beforeEach((to, from, next) => {
+    const publicPages = ['/login'];
+    const authRequired = !publicPages.includes(to.path);
+    const token = localStorage.getItem('token') || sessionStorage.getItem('token');
+  
+    if (authRequired && !token) {
+      // Redirect to login if not authenticated
+      next('/login');
+    } else {
+      next();
+    }
+  });
 
 export default router;

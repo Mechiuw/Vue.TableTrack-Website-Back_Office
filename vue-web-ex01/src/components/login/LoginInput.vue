@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { onMounted, onUnmounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import axios from 'axios';
 
@@ -38,6 +38,8 @@ const rememberMe = ref(false);
 const router = useRouter();
 
 const handleSubmit = async () => {
+  console.log(username.value);
+  console.log(password.value);
   try {
     const response = await axios.post('http://localhost:8080/api/auth/login', {
       username : username.value,
@@ -53,13 +55,18 @@ const handleSubmit = async () => {
       sessionStorage.setItem('token',token);
     }
 
-    router.push("/dashboard")
+    router.push('/dashboard')
   } catch (error){
     console.log(error);
     alert('login failed, please check your credential')
   }
 }
-  
+
+function handleEnterKey(event){
+  if(event.key === 'Enter'){
+    handleSubmit();
+  }
+}
 
 
 </script>
