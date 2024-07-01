@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Login from '../login/Login.vue';
 import Dashboard from '../dashboard/Dashboard.vue';
+import Content from '../dashboard/Content.vue';
+import OrderForm from '../order/form/OrderForm.vue';
 
 const routes = [
   {
@@ -17,6 +19,20 @@ const routes = [
     name: 'Dashboard',
     component: Dashboard,
     meta: { requiresAuth: true },
+    children:[
+      {
+        path: 'content',
+        name: 'content',
+        component: Content,
+        children:[
+          {
+            path: 'orderform',
+            name: 'orderform',
+            component: OrderForm
+          }
+        ]
+      }
+  ]
   },
 ];
 

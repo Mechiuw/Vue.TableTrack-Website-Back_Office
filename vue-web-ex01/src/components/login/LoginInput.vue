@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue';
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import axios from 'axios';
 
@@ -55,19 +55,12 @@ const handleSubmit = async () => {
       sessionStorage.setItem('token',token);
     }
 
-    router.push('/dashboard')
+    router.push('/dashboard/content')
   } catch (error){
     console.log(error);
     alert('login failed, please check your credential')
   }
 }
-
-function handleEnterKey(event){
-  if(event.key === 'Enter'){
-    handleSubmit();
-  }
-}
-
 
 </script>
 
