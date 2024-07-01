@@ -1,33 +1,31 @@
-// Example store.js
-import { createStore } from 'vuex';
+export const state = () => ({
+    orders : []
+})
 
-export default createStore({
-  state: {
-    orders: []
-  },
-  mutations: {
-    ADD_ORDER(state, order) {
-      state.orders = [order, ...state.orders];
+export const mutations = {
+    ADD_ORDER(state,order){
+        state.orders = [order,...state.orders]
     },
-    REMOVE_ORDER(state, order) {
-      const index = state.orders.indexOf(order);
-      if (index !== -1) {
-        state.orders.splice(index, 1);
-      }
+    REMOVE_ORDER(state,order){
+        const index = state.orders.indexOf(order)
+        if(index !== -1){
+            state.orders.splice(index,1);
+        }
     },
-    UPDATE_ORDER(state, order) {
-      const index = state.orders.findIndex(o => o.id === order.id);
-      if (index !== -1) {
-        state.orders[index] = order;
-      }
+    UPDATE_ORDER(state,order){
+        const index = state.orders.indexOf(order)
+        if(index !== -1){
+            state.orders[index] = order;
+        }
     }
-  },
-  getters: {
+}
+
+export const getters = {
     GET_ALL_ORDERS(state) {
-      return state.orders;
+        return state.orders;
     },
     GET_ORDER_BY_ID: (state) => (id) => {
-      return state.orders.find(order => order.id === id);
+        return state.orders.find(order => order.id === id);
     }
-  }
-});
+}
+
