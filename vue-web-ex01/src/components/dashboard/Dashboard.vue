@@ -1,4 +1,5 @@
 <script>
+import { RouterView } from 'vue-router';
 import NavBar from '../navbar/NavBar.vue';
 import TopBar from '../topbar/TopBar.vue';
 import Content from './Content.vue';
@@ -22,7 +23,8 @@ export default {
                 <NavBar/>
             </div>
             <div class="main-content">
-                <Content/>
+                <!-- these were changed from <Content/> -->
+                <RouterView ></RouterView>
             </div>
         </div>
     </div>
@@ -35,6 +37,8 @@ export default {
 }
 
 .main-content{
-    margin-left: 20%;
+    margin-left: 5%;
+    width: 80%;
+    height: 100%;
 }
 </style>

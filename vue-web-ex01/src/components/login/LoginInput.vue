@@ -46,8 +46,8 @@ const handleSubmit = async () => {
       password : password.value
     })
 
-    console.log(response.data);
     const token = response.data.token;
+    console.log(response.data);
     
     if(rememberMe.value){
       localStorage.setItem('token',token);
@@ -55,7 +55,7 @@ const handleSubmit = async () => {
       sessionStorage.setItem('token',token);
     }
 
-    router.push('/dashboard/content')
+    router.push('/dashboard')
   } catch (error){
     console.log(error);
     alert('login failed, please check your credential')

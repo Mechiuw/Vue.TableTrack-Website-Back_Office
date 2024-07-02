@@ -1,10 +1,10 @@
 <script>
-import { IconContainer, IconForms, IconPlus, IconSearch, IconUsersGroup } from '@tabler/icons-vue';
+import { IconContainer, IconFileAnalytics, IconPlus, IconSearch, IconUsersGroup } from '@tabler/icons-vue';
 import { RouterLink } from 'vue-router';
 
 export default {
     name : 'NavBar',
-    components : { IconContainer, IconForms, IconPlus, IconSearch, IconUsersGroup },
+    components : { IconContainer, IconFileAnalytics, IconPlus, IconSearch, IconUsersGroup },
 }
 </script>
 
@@ -12,8 +12,8 @@ export default {
     <div class="navbar-viewport">
         <IconSearch size="28px"/>
 
-        <RouterLink :to="{path:'/dashboard/content/orderform'}" >
-            <IconForms size="28px"/>
+        <RouterLink :to="{path:'/dashboard/content/orderform'}" style="color: white;" >
+            <IconFileAnalytics size="28px" />
         </RouterLink> 
         
         <IconContainer size="28px"/>

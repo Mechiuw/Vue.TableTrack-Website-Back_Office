@@ -41,7 +41,12 @@
   
       const handleInput = async () => {
         try {
-          const response = await axios.get(`${props.apiUrl}?search=${inputValue.value}`);
+          const response = await axios.get(`${props.apiUrl}?search=${inputValue.value}`,{
+            headers:{
+              'Authorization' : `Bearer ${localStorage.getItem('token')}`,
+              'Content-Type' : 'application/json', 
+            }
+          });
           filteredOptions.value = response.data;
           showDropdown.value = true;
         } catch (error) {
