@@ -8,10 +8,11 @@
       <div class="input-div">
         <label for="customer-select">Customer</label>
         <Autocomplete
-          v-model="selectedCustomer"
+          v-model="customer"
           :api-url="customerApiUrl"
           field-name="name"
           placeholder="Search for customer..."
+          
         />
       </div>
       <div class="input-div">
@@ -21,7 +22,7 @@
       <div class="input-div">
         <label for="order-product">Product</label>
         <Autocomplete
-          v-model="selectedProduct"
+          v-model="product"
           :api-url="productApiUrl" 
           field-name="name"
           placeholder="Search for product..."
@@ -40,33 +41,35 @@ import { ref } from 'vue';
 import { useStore } from 'vuex';
 
 export default {
-  
   components:{
     Autocomplete
   },
   setup() {
-    const store = useStore();
-    const selectedCustomer = ref(null);
-    const selectedProduct = ref(null);
+    const store = useStore()
+
+    const customer = ref({});
+    const product = ref({});
+
     const customerApiUrl = 'http://localhost:8080/api/customer/search';
     const productApiUrl = 'http://localhost:8080/api/product/search';
+
     const orderQuantity = ref(0);
     const orderDate = ref(null);
 
     const addOrder = () => {
       const newOrder = {
         date: orderDate.value,
-        customer: selectedCustomer.value,
-        quantity: orderQuantity.value,
-        product: selectedProduct.value
+        customer: customer.value?.name,
+        product: product.value?.name,
+        quantity: orderQuantity.value
       };
       store.commit('ADD_ORDER', newOrder);
     };
 
     return {
       addOrder,
-      selectedCustomer,
-      selectedProduct,
+      customer,
+      product,
       customerApiUrl,
       productApiUrl,
       orderQuantity,

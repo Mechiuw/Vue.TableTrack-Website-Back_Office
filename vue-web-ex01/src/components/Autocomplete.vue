@@ -42,14 +42,12 @@ export default {
 
     const handleInput = async () => {
       try {
-        console.log('Fetching data for input:', inputValue.value);
         const response = await axios.get(`${props.apiUrl}?input=${inputValue.value}`, {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`,
             'Content-Type': 'application/json',
           }
         });
-        console.log('Response:', response.data); 
         filteredOptions.value = response.data.data; 
         showDropdown.value = true;
       } catch (error) {
@@ -70,6 +68,7 @@ export default {
     };
 
     const selectOption = (option) => {
+      console.log('option:',option);
       inputValue.value = option[props.fieldName];
       emit('update:value', option);
       showDropdown.value = false;

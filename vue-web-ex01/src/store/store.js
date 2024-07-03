@@ -1,9 +1,11 @@
-export const state = () => ({
-    orders : []
-})
 
-export const mutations = {
+export default {
+state : () => ({
+    orders:[]
+}),
+mutations : {
     ADD_ORDER(state,order){
+        console.log('ORDER',order);
         state.orders = [order,...state.orders]
     },
     REMOVE_ORDER(state,order){
@@ -18,14 +20,13 @@ export const mutations = {
             state.orders[index] = order;
         }
     }
-}
+},
 
-export const getters = {
-    GET_ALL_ORDERS(state) {
-        return state.orders;
-    },
+getters : {
+
     GET_ORDER_BY_ID: (state) => (id) => {
         return state.orders.find(order => order.id === id);
     }
 }
 
+}
