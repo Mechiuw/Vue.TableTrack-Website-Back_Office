@@ -38,16 +38,12 @@ const rememberMe = ref(false);
 const router = useRouter();
 
 const handleSubmit = async () => {
-  console.log(username.value);
-  console.log(password.value);
   try {
     const response = await axios.post('http://localhost:8080/api/auth/login', {
       username : username.value,
       password : password.value
-    })
-    .
-    const token = response.data.token;
-    console.log(response.data);
+    });
+    const token = response.data.data.token;
     
     if(rememberMe.value){
       localStorage.setItem('token',token);
