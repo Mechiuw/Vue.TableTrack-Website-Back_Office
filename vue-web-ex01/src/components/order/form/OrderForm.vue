@@ -1,11 +1,11 @@
 <template>
   <div class="container">
     <form @submit.prevent="addOrder" class="form-control ordr-form">
-      <div>
+      <div class="input-div">
         <label for="order-date">Date</label>
         <input v-model="orderDate" type="date" id="order-date" class="order-inputs">
       </div>
-      <div>
+      <div class="input-div">
         <label for="customer-select">Customer</label>
         <Autocomplete
           v-model="selectedCustomer"
@@ -14,11 +14,11 @@
           placeholder="Search for customer..."
         />
       </div>
-      <div>
+      <div class="input-div">
         <label for="order-quantity-product">Quantity</label>
         <input v-model="orderQuantity" type="number" id="order-quantity-product" min="1" class="order-inputs"/>
       </div>
-      <div>
+      <div class="input-div">
         <label for="order-product">Product</label>
         <Autocomplete
           v-model="selectedProduct"
@@ -27,8 +27,8 @@
           placeholder="Search for product..."
         />
       </div>
-      <div>
-        <button class="btn btn-dark" type="submit">Order!</button>
+      <div class="input-div">
+        <button class="btn btn-dark button-order-input" type="submit">Order!</button>
       </div>
     </form>
   </div>
@@ -77,12 +77,5 @@ export default {
 </script>
 
 <style>
-.ordr-form {
-  padding: 30px;
-  width: 100%;
-  height: 100%;
-}
-.order-inputs {
-  width: 100%;
-}
+@import url('../form/OrderFormStyle.css');
 </style>
