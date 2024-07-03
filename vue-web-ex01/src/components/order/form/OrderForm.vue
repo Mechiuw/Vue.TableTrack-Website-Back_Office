@@ -49,7 +49,7 @@ export default {
     const selectedCustomer = ref(null);
     const selectedProduct = ref(null);
     const customerApiUrl = 'http://localhost:8080/api/customer/search';
-    const productApiUrl = 'http://localhost:8080/api/product/all';
+    const productApiUrl = 'http://localhost:8080/api/product/search';
     const orderQuantity = ref(0);
     const orderDate = ref(null);
 
